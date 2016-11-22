@@ -1,6 +1,7 @@
 // Task 1: Create a function that randomly chooses among 'rock', 'paper', or 'scissors'.
 var generateComputerChoice = function () {
     // Task 1, Step 1: Create an array with three elements ("rock", "paper" and "scissors").
+
       var array = ["rock","scissors","paper"];
     // Task 1, Step 2: Use the JavaScript Math function to generate a random whole
     // number between 0 and 2. Be sure to save it to a variable.
@@ -23,7 +24,7 @@ var pickWinner = function (userChoice, computerChoice) {
     
     
     // Task 2, Step 1: Create an "if/else if/else" statement that compares the
-    // userChoice and computerChoice under any possible game outcome.
+    // userChoice and computerChoice under any possible game outcome
     
     if ( (userChoice == "paper" && computerChoice == "paper") || 
         (userChoice == "rocks" && computerChoice == "rocks")||
@@ -39,6 +40,7 @@ var pickWinner = function (userChoice, computerChoice) {
     }
     
     // Task 4: Show `computerChoice` in HTML after the words "Computer's choice:"
+    
     // Task 5: Show the winner in HTML after the word "Winner:"
     else{
         winner= "computer wins";
@@ -73,11 +75,13 @@ $( ".choice" ).click(function() {
 
 
     // Task 3: To be completed AFTER this game functions in the console.
-    // Set `userChoice` to "null" and create a click handler that changes the
-    // value based on the item the user clicks on the HTML page.
+    // Set `userChoice` to "null" and create click handlers that changes the
+    // value of userChoice based on the item the user clicks on the HTML page.
 
     // This line calls the `pickWinner` function with the `userChoice` variable
     // and the `computerChoice` variable.
-   // pickWinner(userChoice, computerChoice);
-
+    pickWinner(userChoice, computerChoice);
+    //Final Task: comment out the pickWinner function on the line above and place it within your click functions created in Task 3.
+    //this is done so the computer does not pick its throw until the user has also done so.
+    
 });
