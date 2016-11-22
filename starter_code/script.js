@@ -2,10 +2,10 @@
 var generateComputerChoice = function () {
     // Task 1, Step 1: Create an array with three elements ("rock", "paper" and "scissors").
 
-      var array = ["rock","scissors","paper"];
+      var array = ["rock","scissors","paper", "spock", "lizard"];
     // Task 1, Step 2: Use the JavaScript Math function to generate a random whole
     // number between 0 and 2. Be sure to save it to a variable.
-    var  random = Math.floor(Math.random()*3);
+    var  random = Math.floor(Math.random()*5);
     // Task 1, Step 3: Use this randomly generated number to pull a value from the
     // array (eg myArray[randomNum])
          var Waffles =   array[random];
@@ -28,14 +28,20 @@ var pickWinner = function (userChoice, computerChoice) {
     
     if ( (userChoice == "paper" && computerChoice == "paper") || 
         (userChoice == "rocks" && computerChoice == "rocks")||
-        (userChoice == "scissors" && computerChoice == "scissors") ) { 
+        (userChoice == "scissors" && computerChoice == "scissors") ||
+        (userChoice == "lizard" && computerChoice == "lizard" )||
+        (userChoice == "spark" && computerChoice == "spark") ) { 
         winner ="Tie";
     }
     // Task 2, Step 2: Depending on who is the winner of the game console.log
     // either "user wins", "computer wins" or "draw"
     else if( (userChoice == "paper" && computerChoice== "rock") || 
         (userChoice == "rock" && computerChoice == "scissors") ||
-        (userChoice == "scissors" && computerChoice == "paper") ){
+        (userChoice == "scissors" && computerChoice == "paper") ||
+        (userChoice == "spock" && computerChoice == "scissors") ||
+        (userChoice == "spark" && computerChoice == "rock") ||
+        (userChoice == "lizard" && computerChoice == "paper") ||
+        (userChoice == "lizard" && computerChoice == "spock") ){
         winner= "User wins";
     }
     
@@ -44,6 +50,7 @@ var pickWinner = function (userChoice, computerChoice) {
     // Task 5: Show the winner in HTML after the word "Winner:"
     else{
         winner= "computer wins";
+        $("#trump").attr("src", "http://images.huffingtonpost.com/2015-01-23-TRUMPGIF3.gif");
     } 
     console.log (winner);
     return winner;
@@ -85,3 +92,4 @@ $( ".choice" ).click(function() {
     //this is done so the computer does not pick its throw until the user has also done so.
     
 });
+
